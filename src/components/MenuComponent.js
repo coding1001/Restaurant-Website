@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb,BreadcrumbItem } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb,BreadcrumbItem, ListGroup, CardDeck} from 'reactstrap';
 import { Link } from "react-router-dom";
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
@@ -7,22 +7,39 @@ import { baseUrl } from '../shared/baseUrl';
 function RenderMenuItem ({dish, onClick}) {
 
     return(
-                <Card >
-                    <Link to={`/menu/${dish.id}`} >
-                    <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
+            <div>
+                <Card>
+                    <Link to={'/starters'} >
+                        <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
                         <CardImgOverlay>
-                            <CardTitle classname="white">{dish.name}</CardTitle>
+                            <CardTitle className="white">{dish.name}</CardTitle>
                         </CardImgOverlay>
-                        </Link>
-                  </Card>
+                    </Link>
+                </Card>
+                <Card>
+                    <Link to={'/mains'} >
+                        <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
+                        <CardImgOverlay>
+                            <CardTitle className="white">{dish.name}</CardTitle>
+                        </CardImgOverlay>
+                    </Link>
+                </Card>
+                <Card>
+                    <Link to={'/desserts'} >
+                        <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
+                        <CardImgOverlay>
+                            <CardTitle className="white">{dish.name}</CardTitle>
+                        </CardImgOverlay>
+                    </Link>
+                </Card>
+                </div>
     );
     }
-   
     const Menu = (props) => {
         const menu = props.dishes.dishes.map((dish) => {
             return (
-                <div key={dish.id} className="col-12 col-md-5 m-1">
-                  <RenderMenuItem dish={dish} />
+                <div key={dish.id} className="col-12 col-m5 m-1 menu-img">
+                    <RenderMenuItem dish={dish} />
                 </div>
               );
         });
@@ -68,6 +85,4 @@ function RenderMenuItem ({dish, onClick}) {
             </div>
         );
     }
-        
-      
 export default Menu;

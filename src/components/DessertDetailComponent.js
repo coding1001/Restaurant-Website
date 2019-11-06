@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, Modal, ModalHeader, ModalBody, Breadcrumb, BreadcrumbItem, Button, Row, Col, Label } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Modal, ModalHeader, ModalBody, Breadcrumb, BreadcrumbItem, Button, Row, Col, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
@@ -21,7 +21,7 @@ class CommentForm extends Component{
 }
 handleSubmit(values) {
     this.toggleModal();
-    this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
+    this.props.postComment(this.props.dessertId, values.rating, values.author, values.comment);
 }
 toggleModal() {
     this.setState({
@@ -93,7 +93,7 @@ toggleModal() {
     }
 } 
 
-function RenderDish({dish}) {
+function RenderDessert({dessert}) {
         return (
             <FadeTransform
             in
@@ -101,16 +101,16 @@ function RenderDish({dish}) {
                 exitTransform: 'scale(0.5) translateY(-50%)'
             }}>
         <Card>
-            <CardImg top src={baseUrl + dish.image} alt={dish.name} />
+            <CardImg top src={baseUrl + dessert.image} alt={dessert.name} />
             <CardBody>
-                <CardTitle>{dish.name}</CardTitle>
-                <CardText>{dish.description}</CardText>
+                <CardSubtitle>{dessert.name}</CardSubtitle>
+                <CardText>{dessert.description}</CardText>
             </CardBody>
         </Card>
         </FadeTransform>
         );
     }
-    function RenderComments({comments, postComment, dishId}) {
+    function RenderComments({comments, postComment, dessertId}) {
         const allComments = comments.map(comment => {
             return (
                 <li key={comment.id}>
@@ -126,12 +126,12 @@ function RenderDish({dish}) {
                 <h4>Comments</h4>
                 <ul className="list-unstyled">
                     {allComments}
-                    <CommentForm dishId={dishId} postComment={postComment} />
+                    <CommentForm dessertId={dessertId} postComment={postComment} />
                 </ul>
             </div>
         );
     }
-    const DishDetail = (props) => {
+    const DessertDetail = (props) => {
         if (props.isLoading) {
             return(
                 <div className="container">
@@ -150,28 +150,28 @@ function RenderDish({dish}) {
                 </div>
             );
         }
-        else if (props.dish != null) 
+        else if (props.dessert != null) 
             return (
                 <div className="container">
                 <div className="row">
                     <Breadcrumb>
-                        <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
+                        <BreadcrumbItem><Link to="/desserts">Desserts</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>{props.dessert.name}</BreadcrumbItem>
                     </Breadcrumb>
                     <div className="col-12">
-                        <h3>{props.dish.name}</h3>
+                        <h3>{props.dessert.name}</h3>
                         <hr />
                     </div>                
                 </div>
                 <div className="row">
                     <div className="col-12 col-md-5 m-1">
-                        <RenderDish dish={props.dish} />
+                        <RenderDessert dessert={props.dessert} />
                     </div>
                     <div className="col-12 col-md-5 m-1">
                     <RenderComments 
                         comments={props.comments}
                         postComment={props.postComment}
-                        dishId={props.dish.id}
+                        dessertId={props.dessert.id}
                     />
                     </div>
                 </div>
@@ -183,4 +183,4 @@ function RenderDish({dish}) {
             );
         }
     }
-export default DishDetail;
+export default DessertDetail;

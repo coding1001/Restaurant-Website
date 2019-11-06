@@ -2,6 +2,26 @@ export const DISHES_LOADING = 'DISHES_LOADING';
 export const DISHES_FAILED = 'DISHES_FAILED';
 export const ADD_DISHES = 'ADD_DISHES';
 
+export const STARTERS_LOADING = 'STARTERS_LOADING';
+export const STARTERS_FAILED = 'STARTERS_FAILED';
+export const ADD_STARTERS = 'ADD_STARTERS';
+
+export const MAINS_LOADING = 'MAINS_LOADING';
+export const MAINS_FAILED = 'MAINS_FAILED';
+export const ADD_MAINS = 'ADD_MAINS';
+
+export const VEG_LOADING = 'VEG_LOADING';
+export const VEG_FAILED = 'VEG_FAILED';
+export const ADD_VEG = 'ADD_VEG';
+
+export const SEAFOOD_LOADING = 'SEAFOOD_LOADING';
+export const SEAFOOD_FAILED = 'SEAFOOD_FAILED';
+export const ADD_SEAFOOD = 'ADD_SEAFOOD';
+
+export const DESSERTS_LOADING = 'DESSERTS_LOADING';
+export const DESSERTS_FAILED = 'DESSERTS_FAILED';
+export const ADD_DESSERTS = 'ADD_DESSERTS';
+
 export const PROMOS_LOADING = 'PROMOS_LOADING';
 export const ADD_PROMOS = 'ADD_PROMOS';
 export const PROMOS_FAILED = 'PROMOS_FAILED';

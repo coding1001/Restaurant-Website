@@ -44,21 +44,7 @@ function About(props) {
                     <p>The restaurant traces its humble beginnings to <em>The Frying Pan</em>, a successful chain started by our CEO, Mr. Balal Mohammed, that featured for the first time the world's best cuisines in a pan.</p>
                 </div>
                 <div className="col-12 col-md-5">
-                    <Card>
-                        <CardHeader color="bg-primary text-white">Facts At a Glance</CardHeader>
-                        <CardBody>
-                            <dl className="row p-1">
-                                <dt className="col-6">Birth</dt>
-                                <dd className="col-6">3 Feb. 2013</dd>
-                                <dt className="col-6">Last Year's Turnover</dt>
-                                <dd className="col-6">$25,250,375</dd>
-                                <dt className="col-6">Employees</dt>
-                                <dd className="col-6">60</dd>
-                                <dt className="col-6">Seating</dt>
-                                <dd className="col-6">150</dd>
-                            </dl>
-                        </CardBody>
-                    </Card>
+                  
                 </div>
                 <div className="col-12">
                     <Card>

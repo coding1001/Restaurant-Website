@@ -10,6 +10,20 @@
     min-height:400px;
 }
 
+.menu-img {
+    padding: 10px;
+}
+
+h5{
+    text-align: center;
+    margin-top: -10px;
+    font-size: 8rem;
+    color: #C0B283;
+}
+.subtitle{
+    font-size: 2rem;
+}
+
 .footer{
     background-color: #D5D5D5;
     margin:0px auto;
